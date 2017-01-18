@@ -1,0 +1,16 @@
+Content\mur.xnb
+Content\bean.xnb
+Content\pacman.xnb
+Content\beanMagique.xnb
+Content\fantome_cyan.xnb
+Content\fantome_orange.xnb
+Content\fantome_rose.xnb
+Content\fantome_rouge.xnb
+Content\fan_mangeable.xnb
+Content\pacmanGauche.xnb
+Content\pacmanBas.xnb
+Content\pacmanHaut.xnb
+Content\FantomePeur1.xnb
+Content\Invincible.xnb
+Content\MonsterEaten.xnb
+Content\PoliceScore.xnb

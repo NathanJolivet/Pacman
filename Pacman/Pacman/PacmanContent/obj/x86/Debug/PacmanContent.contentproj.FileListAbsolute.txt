@@ -1,0 +1,2 @@
+C:\Users\Christian TAGUEJOU\OneDrive\Documents\CSharp\Pacman\Pacman\Pacman\PacmanContent\obj\x86\Debug\PacmanContent.contentprojResolveAssemblyReference.cache
+C:\Users\chris\OneDrive\Documents\CSharp\Pacman\Pacman\Pacman\PacmanContent\obj\x86\Debug\PacmanContent.contentprojResolveAssemblyReference.cache
