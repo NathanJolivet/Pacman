@@ -8,7 +8,6 @@ namespace Pacman
 {
     class FantomeRouge : Fantomes //Héritage de la classe Fantomes
     {
-        private static SpriteBatch spriteBatch;
         ObjetAnime fantome;
         public FantomeRouge(ObjetAnime fantome) : base(fantome)
         {

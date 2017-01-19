@@ -18,6 +18,8 @@ namespace Pacman
     {
         public static int score = 0;
         public static int vies = 3;
+        public static Boolean fantomeMangeable;
+        public static Stopwatch tpsPouvoir = new Stopwatch();
         public ObjetAnime pacman;
         byte[,] map;
         string direction;
@@ -169,9 +171,31 @@ namespace Pacman
                 }
             }
             spriteBatch.End();
-
         }
 
+        public void MangerPouvoir(ObjetAnime pacman) //Faudra essayer de mettre cette fonction dans la classe Pacman
+        {
+            for (int x = 0; x < VX; x++)
+            {
+                for (int y = 0; y < VY; y++)
+                {
+                    if (map[x, y] == 3 && (x == pacman.coord.X && y == pacman.coord.Y))
+                    {
+                        map[x, y] = 2;
+                        fantomeMangeable = true;
+                        tpsPouvoir.Start();
+                      /*  fantomeCyan.Texture = fantomeOrange.Texture = fantomeRose.Texture = fantomeRouge.Texture = fantomeMangeable.Texture;
+
+                        _fantomeCyan.Afficher(fantomeCyan, spriteBatch);
+                        _fantomeOrange.Afficher(fantomeOrange, spriteBatch);
+                        _fantomeRose.Afficher(fantomeRose, spriteBatch);
+                        _fantomeRouge.Afficher(fantomeRouge, spriteBatch);
+                        tpsPouvoir.Start();
+                        Dijkstra.mangeable = true;*/
+                    }
+                }
+            }
+        }
 
     }
 }

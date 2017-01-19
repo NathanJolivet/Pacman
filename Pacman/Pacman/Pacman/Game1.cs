@@ -44,7 +44,7 @@ namespace Pacman
         ObjetAnime fantomeMangeable;
         DeplacementFantome mvtAleatoire;
 
-        Stopwatch tpsPouvoir = new Stopwatch();
+
        // Stopwatch tpsVitesseFantome = new Stopwatch();
 
         public static byte[,] map;
@@ -190,13 +190,7 @@ namespace Pacman
 
 
             //Haricot magique
-            MangerPouvoir(pacman.coord.X, pacman.coord.Y);
-            if(tpsPouvoir.ElapsedMilliseconds > 6000)
-            {
-                RegenFantome();
-                tpsPouvoir.Reset();
-                Dijkstra.mangeable = false;
-            }
+            _pacman.MangerPouvoir(pacman);
 
             base.Update(gameTime);
         }
@@ -216,23 +210,21 @@ namespace Pacman
             spriteBatch.DrawString(_police, Pacman.score.ToString(), new Vector2(800, 100), Color.White);
             spriteBatch.End();
 
+            //Affichage de la map
             _bean.AfficherMap(bean, spriteBatch, 1, map);
             _mur.AfficherMap(mur, spriteBatch,0, map);
             _beanMagique.AfficherMap(beanMagique, spriteBatch, 3, map);
-          /*  _beanMagique.Afficher(beanMagique, spriteBatch, 3, map);
-            _bean.Affichermap(bean, spriteBatch, 1, map);
-            _mur.Affichermap(mur, spriteBatch, 0, map);*/
             _pacman.Afficher(pacman, spriteBatch);
-            _fantomeCyan.Afficher(fantomeCyan, spriteBatch);
-            _fantomeOrange.Afficher(fantomeOrange, spriteBatch);
-            _fantomeRose.Afficher(fantomeRose, spriteBatch);
-            _fantomeRouge.Afficher(fantomeRouge, spriteBatch);
+            _fantomeCyan.Afficher(fantomeCyan, spriteBatch, Content);
+            _fantomeOrange.Afficher(fantomeOrange, spriteBatch, Content);
+            _fantomeRose.Afficher(fantomeRose, spriteBatch, Content);
+            _fantomeRouge.Afficher(fantomeRouge, spriteBatch, Content);
 
             base.Draw(gameTime);
 
         }       
 
-        protected void MangerPouvoir(int a, int b) //Faudra essayer de mettre cette fonction dans la classe Pacman
+     /*   protected void MangerPouvoir(int a, int b) //Faudra essayer de mettre cette fonction dans la classe Pacman
         {
             for (int x = 0; x < VX; x++)
             {
@@ -253,7 +245,7 @@ namespace Pacman
                     }
                 }
             }
-        }
+        }*/
 
         protected void RegenFantome() //Les fantomes retrouve leurs textures d'origine
         {

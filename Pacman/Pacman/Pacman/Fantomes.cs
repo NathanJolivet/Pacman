@@ -11,8 +11,10 @@ namespace Pacman
 {
     class Fantomes : Affichage
     {
-        static Stopwatch tpsPouvoir = new Stopwatch();  //temps pdt lequel les fantomes seront vulnérables
         ObjetAnime fantome;
+
+        Texture2D fantomeMangeable;
+        Texture2D textureOriginale;
 
         public Fantomes(ObjetAnime fantome) : base()
         {
@@ -20,7 +22,7 @@ namespace Pacman
         }
         
         
-        public void Afficher(ObjetAnime fantome, SpriteBatch spriteBatch)
+        public void Afficher(ObjetAnime fantome, SpriteBatch spriteBatch, ContentManager Content)
         {
             spriteBatch.Begin();
             for (int x = 0; x < Affichage.VX; x++)
@@ -36,6 +38,20 @@ namespace Pacman
                         spriteBatch.Draw(fantome.Texture, pos, Color.White);
                     }
                 }
+            }
+            if(Pacman.fantomeMangeable == true)
+            {
+                fantomeMangeable = Content.Load<Texture2D>("fan_mangeable");
+                fantome.Texture = fantomeMangeable;
+            }
+            else
+            {
+                textureOriginale = fantome.Texture;
+            }
+
+            if (Pacman.tpsPouvoir.ElapsedMilliseconds > 2000)
+            {
+                fantome.Texture = textureOriginale;
             }
             spriteBatch.End();
         }
