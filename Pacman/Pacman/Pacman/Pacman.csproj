@@ -76,11 +76,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Affichage.cs" />
+    <Compile Include="Bean.cs" />
+    <Compile Include="BeanMagique.cs" />
     <Compile Include="Coord.cs" />
     <Compile Include="DeplacementFantome.cs" />
     <Compile Include="Dijkstra.cs" />
     <Compile Include="FantomeRouge.cs" />
     <Compile Include="Fantomes.cs" />
+    <Compile Include="Mur.cs" />
     <Compile Include="ObjetAnime.cs" />
     <Compile Include="Pacman.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

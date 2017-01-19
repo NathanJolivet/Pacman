@@ -9,12 +9,12 @@ using System.Text;
 
 namespace Pacman
 {
-    class Fantomes
+    class Fantomes : Affichage
     {
         static Stopwatch tpsPouvoir = new Stopwatch();  //temps pdt lequel les fantomes seront vulnérables
         ObjetAnime fantome;
 
-        public Fantomes(ObjetAnime fantome)
+        public Fantomes(ObjetAnime fantome) : base()
         {
             this.fantome = fantome;
         }

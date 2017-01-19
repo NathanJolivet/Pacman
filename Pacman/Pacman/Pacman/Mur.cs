@@ -7,22 +7,23 @@ using System.Text;
 
 namespace Pacman
 {
-    abstract class Affichage
+    class Mur : Affichage
     {
-        public static int VX = 31;
-        public static int VY = 28;
+        ObjetAnime mur;
 
-        public virtual void Afficher() {}
+        public Mur(ObjetAnime mur)
+        {
+            this.mur = mur;
+        }
 
-
-        public void AfficherMap(ObjetAnime objet, SpriteBatch spriteBatch, int i, byte[,] map)
+       /* public void Afficher (ObjetAnime objet, SpriteBatch spriteBatch, byte[,] map)
         {
             spriteBatch.Begin();
             for (int x = 0; x < VX; x++)
             {
                 for (int y = 0; y < VY; y++)
                 {
-                    if (map[x, y] == i)
+                    if (map[x, y] == 0)
                     {
                         int xpos, ypos;
                         xpos = x * 20;
@@ -33,8 +34,6 @@ namespace Pacman
                 }
             }
             spriteBatch.End();
-        }
-
-
+        }*/
     }
 }

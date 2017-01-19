@@ -14,7 +14,7 @@ using System.Media;
 
 namespace Pacman
 {
-    class Pacman
+    class Pacman : Affichage
     {
         public static int score = 0;
         public static int vies = 3;
@@ -23,7 +23,7 @@ namespace Pacman
         string direction;
         SoundEffect sonBean;
 
-        public Pacman ( ObjetAnime pacman, byte[,] map) {
+        public Pacman ( ObjetAnime pacman, byte[,] map) : base() {
             this.pacman = pacman;
             this.map = map;
           //  this.direction = direction;

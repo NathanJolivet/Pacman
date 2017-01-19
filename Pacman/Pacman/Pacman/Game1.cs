@@ -28,9 +28,9 @@ namespace Pacman
         private Fantomes _fantomeRose;
         private Fantomes _fantomeOrange;
         private Fantomes _fantomeCyan;
-        private Affichage _mur;
-        private Affichage _bean;
-        private Affichage _beanMagique;
+        private Mur _mur;
+        private Bean _bean;
+        private BeanMagique _beanMagique;
         private SpriteFont _police;
 
         ObjetAnime mur;
@@ -114,9 +114,9 @@ namespace Pacman
             _fantomeRose = new Fantomes(fantomeRose);
             _fantomeOrange = new Fantomes(fantomeOrange);
             _fantomeCyan = new Fantomes(fantomeCyan);
-            _mur = new Affichage();
-            _bean = new Affichage();
-            _beanMagique = new Affichage();
+            _mur = new Mur(mur);
+            _bean = new Bean(bean);
+            _beanMagique = new BeanMagique(beanMagique);
             base.Initialize();
         }
 
@@ -216,10 +216,12 @@ namespace Pacman
             spriteBatch.DrawString(_police, Pacman.score.ToString(), new Vector2(800, 100), Color.White);
             spriteBatch.End();
 
-
-            _beanMagique.Affichermap(beanMagique, spriteBatch, 3, map);
+            _bean.AfficherMap(bean, spriteBatch, 1, map);
+            _mur.AfficherMap(mur, spriteBatch,0, map);
+            _beanMagique.AfficherMap(beanMagique, spriteBatch, 3, map);
+          /*  _beanMagique.Afficher(beanMagique, spriteBatch, 3, map);
             _bean.Affichermap(bean, spriteBatch, 1, map);
-            _mur.Affichermap(mur, spriteBatch, 0, map);
+            _mur.Affichermap(mur, spriteBatch, 0, map);*/
             _pacman.Afficher(pacman, spriteBatch);
             _fantomeCyan.Afficher(fantomeCyan, spriteBatch);
             _fantomeOrange.Afficher(fantomeOrange, spriteBatch);
